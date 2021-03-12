@@ -1,2 +1,6 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
+# '*' means its applicable to all robots
+# '/' instructs robots that it should not visit any pages on the site
+User-agent: * 
+Disallow: /
+
+# Ref: https://www.robotstxt.org/robotstxt.html
