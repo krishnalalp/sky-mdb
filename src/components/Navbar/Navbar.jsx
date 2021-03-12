@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Search } from "../Searchbar/Searchbar";
 import "./Navbar.scss";
 
-export function NavBar() {
+export function Navbar() {
   const history = useHistory();
   
   const handleClick = () => {
