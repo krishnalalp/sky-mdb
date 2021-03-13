@@ -5,12 +5,8 @@
     "es6": true
   },
   "parser": "babel-eslint",
-  "extends": [
-    "airbnb", "prettier"
-  ],
-  "plugins": [
-    "react"
-  ],
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["react"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"

@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Typography } from "antd";
 import { useLocation } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { getSearchResults, multiSearch, searchRecommendations } from "../../app/reducer";
+import {
+  getSearchResults,
+  multiSearch,
+  searchRecommendations,
+} from "../../app/reducer";
 import { Card } from "../Card/Card";
 import "./SearchResults.scss";
 
@@ -19,7 +23,7 @@ export function SearchResults() {
     const isSearchPage = location.pathname !== "/";
     setIsSearch(isSearchPage);
 
-    if(!isSearchPage) {
+    if (!isSearchPage) {
       dispatch(searchRecommendations());
     } else {
       const keyword = location.search.split("&")[0].split("=")[1];
@@ -45,18 +49,18 @@ export function SearchResults() {
   };
 
   const renderNoResults = () => {
-    if(
-      isSearch && 
+    if (
+      isSearch &&
       !(
         (shows && shows.length > 0) ||
         (movies && movies.length > 0) ||
         (actors && actors.length > 0)
       )
     ) {
-      return <Title level={4}>Oops! Try searching for other keywords.</Title>
+      return <Title level={4}>Oops! Try searching for other keywords.</Title>;
     }
     return <></>;
-  }
+  };
 
   return (
     <div className="search-results-wrapper">

@@ -5,11 +5,11 @@ import "./Navbar.scss";
 
 export function Navbar() {
   const history = useHistory();
-  
+
   const handleClick = () => {
     history.push("/");
   };
-  
+
   return (
     <div className="navbar">
       <div

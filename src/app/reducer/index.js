@@ -2,7 +2,7 @@ import axios from "axios";
 import { createSlice } from "@reduxjs/toolkit";
 import {
   filterSearchResults,
-  filterResourceDetails
+  filterResourceDetails,
 } from "../../helpers/search.helper";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -14,14 +14,14 @@ export const moviesSlice = createSlice({
     searchResults: {
       actors: [],
       movies: [],
-      shows: []
+      shows: [],
     },
     selectedResource: {},
     suggestions: {
       actors: [],
       movies: [],
-      shows: []
-    }
+      shows: [],
+    },
   },
   reducers: {
     setResults: (state, action) => {
@@ -33,14 +33,14 @@ export const moviesSlice = createSlice({
     },
     setSelectedResource: (state, action) => {
       state.selectedResource = action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const {
   setResults,
   setSuggestions,
-  setSelectedResource
+  setSelectedResource,
 } = moviesSlice.actions;
 
 export const multiSearch = (
@@ -51,7 +51,7 @@ export const multiSearch = (
   const API_URL = `${BASE_URL}/search/${searchOption}?api_key=${API_KEY}&language=en-US&query=${keyword}&page=1&include_adult=false`;
   const response = await axios({
     method: "get",
-    url: API_URL
+    url: API_URL,
   });
   const { results } = response.data;
   const filteredData = filterSearchResults(results, searchOption);
@@ -65,23 +65,23 @@ export const multiSearch = (
 export const searchRecommendations = () => async (dispatch) => {
   const response = await axios({
     method: "get",
-    url: `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
+    url: `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`,
   });
   const { results } = response.data;
   const filteredData = filterSearchResults(results);
   dispatch(setResults(filteredData));
-}
+};
 
 export const searchDetail = (resource, id) => async (dispatch) => {
-  const relatedData = (resource === "person") ? "movie_credits" : "credits";
+  const relatedData = resource === "person" ? "movie_credits" : "credits";
   const response = await axios({
     method: "get",
-    url: `${BASE_URL}/${resource}/${id}?api_key=${API_KEY}&language=en-US&append_to_response=${relatedData}`
+    url: `${BASE_URL}/${resource}/${id}?api_key=${API_KEY}&language=en-US&append_to_response=${relatedData}`,
   });
   const details = response.data;
   const filteredData = filterResourceDetails(relatedData, details);
   dispatch(setSelectedResource(filteredData));
-}
+};
 
 export const getSearchResults = (state) => state.movies.searchResults;
 export const getSuggestions = (state) => state.movies.suggestions;

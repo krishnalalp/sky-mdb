@@ -3,7 +3,7 @@ const filterSearchResults = (results, searchOption) => {
   const shows = [];
   const actors = [];
   results.forEach((result) => {
-    if(result.id && (result.title || result.name)) {
+    if (result.id && (result.title || result.name)) {
       if (searchOption === "person" || result.media_type === "person") {
         actors.push(result);
       } else if (searchOption === "tv" || result.media_type === "tv") {
@@ -15,16 +15,16 @@ const filterSearchResults = (results, searchOption) => {
   });
 
   return {
-    actors: actors.sort((a,b) => b.popularity - a.popularity),
-    movies: movies.sort((a,b) => b.popularity - a.popularity),
-    shows: shows.sort((a,b) => b.popularity - a.popularity)
-  }
-}
+    actors: actors.sort((a, b) => b.popularity - a.popularity),
+    movies: movies.sort((a, b) => b.popularity - a.popularity),
+    shows: shows.sort((a, b) => b.popularity - a.popularity),
+  };
+};
 
 const filterResourceDetails = (key, details) => {
   const relatedData = [];
   details[key].cast.forEach((result) => {
-    if(result.id && (result.title || result.name)) {
+    if (result.id && (result.title || result.name)) {
       relatedData.push(result);
     }
   });
@@ -32,9 +32,9 @@ const filterResourceDetails = (key, details) => {
   return {
     ...details,
     [key]: {
-      cast: relatedData
-    }
-  }
-}
+      cast: relatedData,
+    },
+  };
+};
 
 export { filterSearchResults, filterResourceDetails };
