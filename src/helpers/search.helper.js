@@ -1,12 +1,16 @@
+import constants from "./constants";
+
+const { TYPES } = constants;
+
 const filterSearchResults = (results, searchOption) => {
   const movies = [];
   const shows = [];
   const actors = [];
   results.forEach((result) => {
     if (result.id && (result.title || result.name)) {
-      if (searchOption === "person" || result.media_type === "person") {
+      if (searchOption === TYPES.CAST || result.media_type === TYPES.CAST) {
         actors.push(result);
-      } else if (searchOption === "tv" || result.media_type === "tv") {
+      } else if (searchOption === TYPES.TV || result.media_type === TYPES.TV) {
         shows.push(result);
       } else {
         movies.push(result);
@@ -15,9 +19,9 @@ const filterSearchResults = (results, searchOption) => {
   });
 
   return {
-    actors: actors.sort((a, b) => b.popularity - a.popularity),
-    movies: movies.sort((a, b) => b.popularity - a.popularity),
-    shows: shows.sort((a, b) => b.popularity - a.popularity),
+    actors,
+    movies,
+    shows,
   };
 };
 
@@ -32,7 +36,7 @@ const filterResourceDetails = (key, details) => {
   return {
     ...details,
     [key]: {
-      cast: relatedData,
+      cast: relatedData.sort((a, b) => b.popularity - a.popularity),
     },
   };
 };

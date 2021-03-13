@@ -8,9 +8,11 @@ import {
   searchRecommendations,
 } from "../../app/reducer";
 import { Card } from "../Card/Card";
+import constants from "../../helpers/constants";
 import "./SearchResults.scss";
 
 const { Title } = Typography;
+const { TITLES, TYPES } = constants;
 
 export function SearchResults() {
   const dispatch = useDispatch();
@@ -65,11 +67,11 @@ export function SearchResults() {
   return (
     <div className="search-results-wrapper">
       <Title level={4}>
-        {isSearch ? "Search Results" : "Recommended Movies"}
+        {isSearch ? TITLES.SEARCH_RESULTS : TITLES.RECOMMENDED_MOVIES}
       </Title>
-      {renderList("Movies", "movie", movies)}
-      {renderList("Actors", "person", actors)}
-      {renderList("Shows", "tv", shows)}
+      {renderList(TITLES.MOVIE, TYPES.MOVIE, movies)}
+      {renderList(TITLES.TV, TYPES.TV, shows)}
+      {renderList(TITLES.CAST, TYPES.CAST, actors)}
       {renderNoResults()}
     </div>
   );

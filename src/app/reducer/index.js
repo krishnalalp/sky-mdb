@@ -4,9 +4,12 @@ import {
   filterSearchResults,
   filterResourceDetails,
 } from "../../helpers/search.helper";
+import constants from "../../helpers/constants";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
-const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const { APPEND_DATA, TYPES } = constants;
+
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
+const BASE_URL = process.env.REACT_APP_TMDB_API_BASE_URL;
 
 export const moviesSlice = createSlice({
   name: "movies",
@@ -48,7 +51,7 @@ export const multiSearch = (
   searchOption,
   suggestionsSearch = false
 ) => async (dispatch) => {
-  const API_URL = `${BASE_URL}/search/${searchOption}?api_key=${API_KEY}&language=en-US&query=${keyword}&page=1&include_adult=false`;
+  const API_URL = `${BASE_URL}/search/${searchOption}?api_key=${API_KEY}&language=en-US&query=${keyword}&page=1&include_adult=false&sort_by=popularity.desc`;
   const response = await axios({
     method: "get",
     url: API_URL,
@@ -73,10 +76,10 @@ export const searchRecommendations = () => async (dispatch) => {
 };
 
 export const searchDetail = (resource, id) => async (dispatch) => {
-  const relatedData = resource === "person" ? "movie_credits" : "credits";
+  const relatedData = resource === TYPES.CAST ? APPEND_DATA.MOVIE_CREDITS : APPEND_DATA.CREDITS;
   const response = await axios({
     method: "get",
-    url: `${BASE_URL}/${resource}/${id}?api_key=${API_KEY}&language=en-US&append_to_response=${relatedData}`,
+    url: `${BASE_URL}/${resource}/${id}?api_key=${API_KEY}&language=en-US&append_to_response=${relatedData}&sort_by=popularity.desc`,
   });
   const details = response.data;
   const filteredData = filterResourceDetails(relatedData, details);

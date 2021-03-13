@@ -3,6 +3,9 @@ import { Divider, List } from "antd";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { getSuggestions } from "../../app/reducer";
+import constants from "../../helpers/constants";
+
+const { TITLES, TYPES } = constants;
 
 export function Suggestions({ handleClick }) {
   const suggestions = useSelector(getSuggestions);
@@ -32,9 +35,9 @@ export function Suggestions({ handleClick }) {
   return (
     <div>
       <>
-        {renderList("Movies", "movie", movies)}
-        {renderList("Actors", "person", actors)}
-        {renderList("Shows", "tv", shows)}
+        {renderList(TITLES.MOVIE, TYPES.MOVIE, movies)}
+        {renderList(TITLES.TV, TYPES.TV, shows)}
+        {renderList(TITLES.CAST, TYPES.CAST, actors)}
       </>
     </div>
   );

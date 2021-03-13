@@ -1,3 +1,7 @@
+import constants from "../../helpers/constants";
+
+const { TITLES, TYPES } = constants;
+
 const mapPerson = (actorDetail) => ({
   title: actorDetail.name,
   poster: actorDetail.profile_path,
@@ -20,8 +24,8 @@ const mapPerson = (actorDetail) => ({
     },
   ],
   extraDetails: {
-    title: "Movies",
-    type: "movie",
+    title: TITLES.MOVIE,
+    type: TYPES.MOVIE,
     data: actorDetail.movie_credits.cast,
   },
 });
@@ -72,8 +76,8 @@ const mapMovie = (movieDetail) => ({
     },
   ],
   extraDetails: {
-    title: "Cast",
-    type: "person",
+    title: TITLES.CAST,
+    type: TYPES.CAST,
     data: movieDetail.credits.cast,
   },
 });
@@ -120,20 +124,20 @@ const mapTv = (showDetail) => ({
     },
   ],
   extraDetails: {
-    title: "Cast",
-    type: "person",
+    title: TITLES.CAST,
+    type: TYPES.CAST,
     data: showDetail.credits.cast,
   },
 });
 
 export const mapDetails = (resourceDetails, resource) => {
-  if (resource === "movie") {
+  if (resource === TYPES.MOVIE) {
     return mapMovie(resourceDetails);
   }
-  if (resource === "person") {
+  if (resource === TYPES.CAST) {
     return mapPerson(resourceDetails);
   }
-  if (resource === "tv") {
+  if (resource === TYPES.TV) {
     return mapTv(resourceDetails);
   }
   return {};

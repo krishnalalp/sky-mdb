@@ -5,6 +5,8 @@ import constants from "../../helpers/constants";
 
 import "./Card.scss";
 
+const { TYPES } = constants;
+
 export function Card({ type, data }) {
   const renderItem = (itemType, id, title, image) => (
     <Link to={`/${itemType}/${id}`}>
@@ -30,13 +32,13 @@ export function Card({ type, data }) {
 
   const renderSearchItem = () => {
     const { title, name, poster_path, profile_path, id } = data;
-    if (type === "person") {
-      return renderItem("person", id, name, profile_path);
+    if (type === TYPES.CAST) {
+      return renderItem(TYPES.CAST, id, name, profile_path);
     }
-    if (type === "tv") {
-      return renderItem("tv", id, name, poster_path);
+    if (type === TYPES.TV) {
+      return renderItem(TYPES.TV, id, name, poster_path);
     }
-    return renderItem("movie", id, title, poster_path);
+    return renderItem(TYPES.MOVIE, id, title, poster_path);
   };
 
   return <div className="search-item">{renderSearchItem()}</div>;

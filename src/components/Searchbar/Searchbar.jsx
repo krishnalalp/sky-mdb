@@ -18,7 +18,7 @@ export function Search() {
 
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchOption, setSearchOption] = useState("multi");
+  const [searchOption, setSearchOption] = useState(constants.DEFAULT_SEARCH_OPTION);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   const handleSearch = (keyword) => {
@@ -91,7 +91,7 @@ export function Search() {
             ref={inputRef}
             className="textbox"
             aria-label="Search here"
-            placeholder="Movies, TV Series, Cast"
+            placeholder="Movies, TV Shows, Cast"
             value={searchTerm}
             onChange={(e) => handleSearch(e.target.value)}
           />
