@@ -21,4 +21,20 @@ const filterSearchResults = (results, searchOption) => {
   }
 }
 
-export { filterSearchResults };
+const filterResourceDetails = (key, details) => {
+  const relatedData = [];
+  details[key].cast.forEach((result) => {
+    if(result.id && (result.title || result.name)) {
+      relatedData.push(result);
+    }
+  });
+
+  return {
+    ...details,
+    [key]: {
+      cast: relatedData
+    }
+  }
+}
+
+export { filterSearchResults, filterResourceDetails };

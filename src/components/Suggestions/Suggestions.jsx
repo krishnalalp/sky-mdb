@@ -1,3 +1,5 @@
+	
+import React from "react";
 import { Divider, List } from "antd";
 import { useSelector } from "react-redux";
 import { getSuggestions } from "../../app/reducer";
@@ -15,15 +17,16 @@ export function Suggestions({ handleClick }) {
           <List 
             bordered
             dataSource={newarr}
-            renderItem={(item) => {
+            renderItem={(item) => (
               <List.Item onClick={() => handleClick(`/${type}/${item.id}`)}>
                 {item.title || item.name}
               </List.Item>
-            }}
+            )}
           />
         </>
       );
     }
+    return <></>;
   };
 
   return (
@@ -34,5 +37,5 @@ export function Suggestions({ handleClick }) {
         {renderList("Shows", "tv", shows)}
       </>
     </div>
-  )
+  );
 }

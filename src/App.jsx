@@ -32,7 +32,7 @@ function App() {
               </Route>
               <Route path="/tv/:id">
                 <Detail resource="tv" />
-              </Route>                            
+              </Route>
             </Switch>
           </Content>
         </Router>

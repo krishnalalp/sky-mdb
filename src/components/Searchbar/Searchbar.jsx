@@ -1,14 +1,18 @@
+import React, { useState, useRef, useEffect } from "react";
+import { useHistory, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { Button, Radio } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import constants from "../../helpers/constants";
 import { multiSearch } from "../../app/reducer";
-import { useState, useRef } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router";
+import constants from "../../helpers/constants";
 import { Suggestions } from "../Suggestions/Suggestions";
+
+import "./Searchbar.scss";
 
 export function Search() {
   const appHistory = useHistory();
+  const location = useLocation();
+  const isHomepage = location.pathname === "/";
   const node = useRef();
   const inputRef = useRef();
 
@@ -17,13 +21,40 @@ export function Search() {
   const [searchOption, setSearchOption] = useState("multi");
   const [showSuggestions, setShowSuggestions] = useState(false);
 
+  useEffect(() => {
+    const keyword = location.search.split("&")[0].split("=")[1];
+    const option = location.search.split("options=")[1] || "multi";
+    setSearchOption(option);
+    if(keyword) {
+      setSearchTerm(decodeURIComponent(keyword));
+    }
+    if(isHomepage) {
+      inputRef.current.focus();
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    }
+  }, []);
+
   const handleSearch = (keyword) => {
     setSearchTerm(keyword);
     if(keyword.length > constants.MIN_SEARCH_LENGTH) {
       dispatch(multiSearch(keyword, searchOption, true));
+      setShowSuggestions(true);
     } else {
       setShowSuggestions(false);
     }
+  }
+
+  const handleClick = (e) => {
+    if(node.current.contains(e.target)) {
+      return;
+    }
+    setShowSuggestions(false);
   }
 
   const handleSuggestionClick =(path) => {
@@ -54,7 +85,7 @@ export function Search() {
 
   return (
     <div className="searchbar" ref={node}>
-      <form>
+      <form onSubmit={(e) => submitSearch(e)}>
         <div className="textbox-wrapper">
           <input 
             ref={inputRef}

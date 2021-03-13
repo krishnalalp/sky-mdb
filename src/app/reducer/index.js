@@ -1,7 +1,8 @@
 import axios from "axios";
 import { createSlice } from "@reduxjs/toolkit";
 import {
-  filterSearchResults
+  filterSearchResults,
+  filterResourceDetails
 } from "../../helpers/search.helper";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -13,22 +14,33 @@ export const moviesSlice = createSlice({
     searchResults: {
       actors: [],
       movies: [],
-      shows: [],
+      shows: []
+    },
+    selectedResource: {},
+    suggestions: {
+      actors: [],
+      movies: [],
+      shows: []
     }
   },
   reducers: {
     setResults: (state, action) => {
+      state.selectedResource = {};
       state.searchResults = action.payload;
     },
     setSuggestions: (state, action) => {
       state.suggestions = action.payload;
+    },
+    setSelectedResource: (state, action) => {
+      state.selectedResource = action.payload;
     }
   }
 });
 
 export const {
   setResults,
-  setSuggestions
+  setSuggestions,
+  setSelectedResource
 } = moviesSlice.actions;
 
 export const multiSearch = (
@@ -48,8 +60,31 @@ export const multiSearch = (
   } else {
     dispatch(setResults(filteredData));
   }
+};
+
+export const searchRecommendations = () => async (dispatch) => {
+  const response = await axios({
+    method: "get",
+    url: `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
+  });
+  const { results } = response.data;
+  const filteredData = filterSearchResults(results);
+  dispatch(setResults(filteredData));
 }
 
+export const searchDetail = (resource, id) => async (dispatch) => {
+  const relatedData = (resource === "person") ? "movie_credits" : "credits";
+  const response = await axios({
+    method: "get",
+    url: `${BASE_URL}/${resource}/${id}?api_key=${API_KEY}&language=en-US&append_to_response=${relatedData}`
+  });
+  const details = response.data;
+  const filteredData = filterResourceDetails(relatedData, details);
+  dispatch(setSelectedResource(filteredData));
+}
+
+export const getSearchResults = (state) => state.movies.searchResults;
 export const getSuggestions = (state) => state.movies.suggestions;
+export const getSelectedResource = (state) => state.movies.selectedResource;
 
 export default moviesSlice.reducer;

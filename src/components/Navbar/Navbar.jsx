@@ -19,7 +19,7 @@ export function Navbar() {
         onClick={() => handleClick()}
         onKeyDown={() => handleClick()}
       >
-        <img alt="sky_logo" src="sky_logo.png"/>
+        <img alt="sky_logo" src="sky_logo.png" />
       </div>
       <Search />
     </div>
