@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Descriptions, Typography } from "antd";
+import PropTypes from "prop-types";
 import { getSelectedResource, searchDetail } from "../../app/reducer";
 import { Card } from "../Card/Card";
 import "./Detail.scss";
@@ -10,8 +11,7 @@ import { mapDetails } from "./detail.helper";
 
 const { Title } = Typography;
 
-
-export const Detail = ({ resource}) => {
+export const Detail = ({ resource }) => {
   const dispatch = useDispatch();
   const params = useParams();
   const { pathname } = useLocation();
@@ -21,7 +21,7 @@ export const Detail = ({ resource}) => {
   useEffect(() => {
     setMappedResource({});
     const { id } = params;
-    if(id) {
+    if (id) {
       dispatch(searchDetail(resource, id));
     }
   }, [params, pathname]);
@@ -40,7 +40,7 @@ export const Detail = ({ resource}) => {
         <>
           <Title level={4}>{renderText(mappedResource.title)}</Title>
           <div className="image">
-            <img 
+            <img
               alt={renderText(mappedResource.title)}
               src={renderImage(mappedResource.poster)}
             />
@@ -53,10 +53,12 @@ export const Detail = ({ resource}) => {
             ))}
           </Descriptions>
           <div className="extra-details">
-            <Title level={4}>{renderText(mappedResource.extraDetails.title)}</Title>
+            <Title level={4}>
+              {renderText(mappedResource.extraDetails.title)}
+            </Title>
             <div className="results-row">
               {mappedResource.extraDetails.data.map((item) => (
-                <Card 
+                <Card
                   key={item.id}
                   type={mappedResource.extraDetails.type}
                   data={item}
@@ -68,4 +70,8 @@ export const Detail = ({ resource}) => {
       )}
     </div>
   );
+};
+
+Detail.propTypes = {
+  resource: PropTypes.string.isRequired,
 };
