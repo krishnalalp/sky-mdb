@@ -36,14 +36,12 @@
   "lint-staged": {
     "linters": {
       "*.{js,jsx,json,css,md}": [
-        "prettier --write",
-        "git add"
+        "prettier --write"
       ]
     },
     "ignore": [
       "**/node_modules/**"
-    ],
-    "concurrent": false
+    ]
   },
   "husky": {
     "hooks": {

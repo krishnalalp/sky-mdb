@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Typography } from "antd";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getSearchResults,
