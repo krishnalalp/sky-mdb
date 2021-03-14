@@ -58,6 +58,7 @@ Run: `npm run test`
 ├── jest.config.json
 ├── package.json
 ├── package-lock.json
+├── Dockerfile
 └── README.md
 ```
 
