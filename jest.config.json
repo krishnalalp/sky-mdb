@@ -1,0 +1,21 @@
+{
+  "setupFilesAfterEnv": ["<rootDir>/testConfig/setupTests.js"],
+  "testRegex": "/*.test.(jsx|js)$",
+  "collectCoverage": true,
+  "coverageReporters": ["lcov"],
+  "coverageDirectory": "test-coverage",
+  "coverageThreshold": {
+    "global": {
+      "branches": 0,
+      "functions": 0,
+      "lines": 0,
+      "statements": 0
+    }
+  },
+  "collectCoverageFrom": ["src/components/**/*.jsx", "src/helpers/*.helper.js"],
+  "moduleDirectories": ["node_modules", "src"],
+  "moduleNameMapper": {
+    "^.+\\.(css|scss)$": "<rootDir>/testConfig/CSSStub.js",
+    "^.+\\.(png)$": "<rootDir>/testConfig/IMGStub.js"
+  }
+}

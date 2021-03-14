@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Suggestions component rendered 1`] = `
+<div>
+  <div
+    className="ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-left"
+    role="separator"
+  >
+    <span
+      className="ant-divider-inner-text"
+    >
+      Movies
+    </span>
+  </div>
+  <div
+    className="ant-list ant-list-split ant-list-bordered"
+  >
+    <div
+      className="ant-spin-nested-loading"
+    >
+      <div
+        className="ant-spin-container"
+      >
+        <ul
+          className="ant-list-items"
+        >
+          <li
+            className="ant-list-item"
+            onClick={[Function]}
+          >
+            Captain Marvel
+          </li>
+          <li
+            className="ant-list-item"
+            onClick={[Function]}
+          >
+            Marvel's Behind the Mask
+          </li>
+          <li
+            className="ant-list-item"
+            onClick={[Function]}
+          >
+            Captain Marvel 2
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    className="ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-left"
+    role="separator"
+  >
+    <span
+      className="ant-divider-inner-text"
+    >
+      TV Shows
+    </span>
+  </div>
+  <div
+    className="ant-list ant-list-split ant-list-bordered"
+  >
+    <div
+      className="ant-spin-nested-loading"
+    >
+      <div
+        className="ant-spin-container"
+      >
+        <ul
+          className="ant-list-items"
+        >
+          <li
+            className="ant-list-item"
+            onClick={[Function]}
+          >
+            Marvel Studios: Legends
+          </li>
+          <li
+            className="ant-list-item"
+            onClick={[Function]}
+          >
+            Marvel's Agents of S.H.I.E.L.D.
+          </li>
+          <li
+            className="ant-list-item"
+            onClick={[Function]}
+          >
+            Marvel's Daredevil
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    className="ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-left"
+    role="separator"
+  >
+    <span
+      className="ant-divider-inner-text"
+    >
+      Cast
+    </span>
+  </div>
+  <div
+    className="ant-list ant-list-split ant-list-bordered"
+  >
+    <div
+      className="ant-spin-nested-loading"
+    >
+      <div
+        className="ant-spin-container"
+      >
+        <ul
+          className="ant-list-items"
+        >
+          <li
+            className="ant-list-item"
+            onClick={[Function]}
+          >
+            Marve Feinberg
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

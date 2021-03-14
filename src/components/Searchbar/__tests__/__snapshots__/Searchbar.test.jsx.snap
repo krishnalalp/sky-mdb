@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar component rendered 1`] = `
+<div
+  className="searchbar"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="textbox-wrapper"
+    >
+      <input
+        aria-label="Search here"
+        className="textbox"
+        onChange={[Function]}
+        placeholder="Movies, TV Shows, Cast"
+        value=""
+      />
+    </div>
+    <Button
+      className="search-button"
+      icon={<ForwardRef(SearchOutlined) />}
+      onClick={[Function]}
+      shape="circle"
+      type="primary"
+    />
+  </form>
+  <Memo
+    buttonStyle="solid"
+    onChange={[Function]}
+    optionType="button"
+    options={
+      Array [
+        Object {
+          "label": "All",
+          "value": "multi",
+        },
+        Object {
+          "label": "Movies",
+          "value": "movie",
+        },
+        Object {
+          "label": "TV Shows",
+          "value": "tv",
+        },
+        Object {
+          "label": "Cast",
+          "value": "person",
+        },
+      ]
+    }
+    value="multi"
+  />
+</div>
+`;

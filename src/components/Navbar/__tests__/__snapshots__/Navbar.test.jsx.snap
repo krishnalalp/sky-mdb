@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar component rendered 1`] = `
+<div
+  className="navbar"
+>
+  <div
+    className="logo"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <img
+      alt="sky_logo"
+      src={Object {}}
+    />
+  </div>
+  <Search />
+</div>
+`;

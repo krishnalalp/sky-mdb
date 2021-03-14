@@ -1,0 +1,47 @@
+.searchbar {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  width: 50%;
+  position: relative;
+  min-width: 230px;
+  padding-top: 10px;
+}
+
+.textbox-wrapper,
+form {
+  flex: 1;
+  position: relative;
+}
+
+.textbox {
+  width: 100%;
+  padding: 0px 20px;
+  outline: 0;
+  border-radius: 40px;
+  border: 1px solid #fff;
+  background: #000;
+  color: #fff;
+  height: 44px;
+}
+
+.search-button {
+  position: absolute;
+  top: 11px;
+  right: 1px;
+  width: 44px;
+  height: 42px;
+  border-radius: 40px;
+  border: none;
+}
+
+.suggestions-wrapper {
+  position: absolute;
+  top: 53px;
+  left: 16px;
+  width: calc(100% - 35px);
+  background: #000;
+  z-index: 10;
+  border: 1px solid #fff;
+  cursor: pointer;
+}

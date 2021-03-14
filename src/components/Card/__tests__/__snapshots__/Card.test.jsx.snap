@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component rendered 1`] = `
+Array [
+  <div
+    className="search-item"
+  >
+    <a
+      href="/movie/724989"
+      onClick={[Function]}
+    >
+      <div
+        className="card"
+      >
+        <div
+          className="card-cover"
+          style={
+            Object {
+              "backgroundImage": "url('http://image.tmdb.org/t/p/w500/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg')",
+            }
+          }
+        />
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-detail"
+          >
+            <div
+              className="card-title"
+            >
+              Hard Kill
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>,
+  ",",
+]
+`;
