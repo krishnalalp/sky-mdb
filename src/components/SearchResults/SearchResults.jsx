@@ -17,15 +17,18 @@ const { TITLES, TYPES } = constants;
 export function SearchResults() {
   const dispatch = useDispatch();
   const location = useLocation();
-  const [isSearch, setIsSearch] = useState(location.pathname !== "/");
+  const [isHome, setIsHome] = useState(location.pathname === "/");
 
   const { movies, shows, actors } = useSelector(getSearchResults);
 
+  /**
+   * To trigger the search/recommendations API
+   */
   useEffect(() => {
-    const isSearchPage = location.pathname !== "/";
-    setIsSearch(isSearchPage);
+    const isHomePage = location.pathname === "/";
+    setIsHome(isHomePage);
 
-    if (!isSearchPage) {
+    if (isHomePage) {
       dispatch(searchRecommendations());
     } else {
       const keyword = location.search.split("&")[0].split("=")[1];
@@ -52,7 +55,7 @@ export function SearchResults() {
 
   const renderNoResults = () => {
     if (
-      isSearch &&
+      !isHome &&
       !(
         (shows && shows.length > 0) ||
         (movies && movies.length > 0) ||
@@ -67,7 +70,7 @@ export function SearchResults() {
   return (
     <div className="search-results-wrapper">
       <Title level={4}>
-        {isSearch ? TITLES.SEARCH_RESULTS : TITLES.RECOMMENDED_MOVIES}
+        {isHome ? TITLES.RECOMMENDED_MOVIES : TITLES.SEARCH_RESULTS}
       </Title>
       {renderList(TITLES.MOVIE, TYPES.MOVIE, movies)}
       {renderList(TITLES.TV, TYPES.TV, shows)}

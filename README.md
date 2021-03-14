@@ -43,6 +43,7 @@ Run: `npm run test`
 ├── public
 ├── src
 │ ├── app
+│ ├── assets
 │ ├── components
 │ ├── helpers
 │ ├── App.jsx

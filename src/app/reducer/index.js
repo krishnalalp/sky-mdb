@@ -11,6 +11,11 @@ const { APPEND_DATA, TYPES } = constants;
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 const BASE_URL = process.env.REACT_APP_TMDB_API_BASE_URL;
 
+/**
+ * Accepts an initial state, an object full of reducer functions, and a "slice name".
+ * Automatically generates action creators and action types that correspond to the reducers and state.
+ * Internally, it uses createAction and createReducer.
+ */
 export const moviesSlice = createSlice({
   name: "movies",
   initialState: {
@@ -46,6 +51,9 @@ export const {
   setSelectedResource,
 } = moviesSlice.actions;
 
+/**
+ * To fetch search results from TMDB API
+ */
 export const multiSearch = (
   keyword,
   searchOption,
@@ -65,6 +73,9 @@ export const multiSearch = (
   }
 };
 
+/**
+ * To fetch recommended movies from TMDB API
+ */
 export const searchRecommendations = () => async (dispatch) => {
   const response = await axios({
     method: "get",
@@ -75,9 +86,12 @@ export const searchRecommendations = () => async (dispatch) => {
   dispatch(setResults(filteredData));
 };
 
+/**
+ * To fetch details of a resource like Movie, TV Show, Cast from TMDB API
+ */
 export const searchDetail = (resource, id) => async (dispatch) => {
   const relatedData =
-    (resource === TYPES.CAST) ? APPEND_DATA.MOVIE_CREDITS : APPEND_DATA.CREDITS;
+    resource === TYPES.CAST ? APPEND_DATA.MOVIE_CREDITS : APPEND_DATA.CREDITS;
   const response = await axios({
     method: "get",
     url: `${BASE_URL}/${resource}/${id}?api_key=${API_KEY}&language=en-US&append_to_response=${relatedData}&sort_by=popularity.desc`,

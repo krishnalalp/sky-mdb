@@ -13,7 +13,7 @@ exports[`Navbar component rendered 1`] = `
   >
     <img
       alt="sky_logo"
-      src="sky_logo.png"
+      src={Object {}}
     />
   </div>
   <Search />

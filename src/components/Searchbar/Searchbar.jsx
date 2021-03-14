@@ -12,7 +12,7 @@ import "./Searchbar.scss";
 export function Search() {
   const appHistory = useHistory();
   const location = useLocation();
-  const isHomepage = location.pathname === "/";
+  const isHomePage = location.pathname === "/";
   const node = useRef();
   const inputRef = useRef();
 
@@ -23,6 +23,9 @@ export function Search() {
   );
   const [showSuggestions, setShowSuggestions] = useState(false);
 
+  /**
+   * To show suggestions when the entered text length is 5 or above
+   */
   const handleSearch = (keyword) => {
     setSearchTerm(keyword);
     if (keyword.length > constants.MIN_SEARCH_LENGTH) {
@@ -33,6 +36,9 @@ export function Search() {
     }
   };
 
+  /**
+   * To hide the suggestions section when clicked elsewhere in web page
+   */
   const handleClick = (e) => {
     if (node.current.contains(e.target)) {
       return;
@@ -40,11 +46,17 @@ export function Search() {
     setShowSuggestions(false);
   };
 
+  /**
+   * To redirect to the details page when a suggestion item is clicked
+   */
   const handleSuggestionClick = (path) => {
     appHistory.push(path);
     setShowSuggestions(false);
   };
 
+  /**
+   * To initiate a search/recommended movies by redirecting to the specified URL
+   */
   const initiateSearch = (option) => {
     if (searchTerm) {
       appHistory.push(`/search?query=${searchTerm}&options=${option}`);
@@ -54,30 +66,43 @@ export function Search() {
     }
   };
 
+  /**
+   * To initiate a search when search button is clicked or when enter is pressed
+   */
   const submitSearch = (e) => {
     e.preventDefault();
     setShowSuggestions(false);
     initiateSearch(searchOption);
   };
 
+  /**
+   * To initiate a search when the search filter changes
+   */
   const onSearchOptionChange = (e) => {
     const { value } = e.target;
     setSearchOption(value);
     initiateSearch(value);
   };
 
+  /**
+   * To populate the search input field with the search term on page load
+   */
   useEffect(() => {
     const keyword = location.search.split("&")[0].split("=")[1];
-    const option = location.search.split("options=")[1] || "multi";
+    const option =
+      location.search.split("options=")[1] || constants.DEFAULT_SEARCH_OPTION;
     setSearchOption(option);
     if (keyword) {
       setSearchTerm(decodeURIComponent(keyword));
     }
-    if (isHomepage) {
+    if (isHomePage) {
       inputRef.current.focus();
     }
   }, []);
 
+  /**
+   * To handle the clicks outside the element
+   */
   useEffect(() => {
     document.addEventListener("mousedown", handleClick);
     return () => {

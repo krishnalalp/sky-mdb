@@ -15,6 +15,7 @@
   "collectCoverageFrom": ["src/components/**/*.jsx", "src/helpers/*.helper.js"],
   "moduleDirectories": ["node_modules", "src"],
   "moduleNameMapper": {
-    "^.+\\.(css|scss)$": "<rootDir>/testConfig/CSSStub.js"
+    "^.+\\.(css|scss)$": "<rootDir>/testConfig/CSSStub.js",
+    "^.+\\.(png)$": "<rootDir>/testConfig/IMGStub.js"
   }
 }

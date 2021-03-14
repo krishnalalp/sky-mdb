@@ -18,6 +18,9 @@ export const Detail = ({ resource }) => {
   const resourceDetails = useSelector(getSelectedResource);
   const [mappedResource, setMappedResource] = useState({});
 
+  /**
+   * To dispatch a details fetch when ID or URL param changes
+   */
   useEffect(() => {
     setMappedResource({});
     const { id } = params;
@@ -26,6 +29,9 @@ export const Detail = ({ resource }) => {
     }
   }, [params, pathname]);
 
+  /**
+   * To map the response data to update the detail page
+   */
   useEffect(() => {
     if (resourceDetails && Object.keys(resourceDetails).length > 0) {
       setMappedResource(mapDetails(resourceDetails, resource));
@@ -47,7 +53,7 @@ export const Detail = ({ resource }) => {
           </div>
           <Descriptions title="" bordered>
             {mappedResource.description.map((desc) => (
-              <Descriptions.Item key={desc.label} label={desc.label}>
+              <Descriptions.Item span={3} key={desc.label} label={desc.label}>
                 {renderText(desc.value)}
               </Descriptions.Item>
             ))}
