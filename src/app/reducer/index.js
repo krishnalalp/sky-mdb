@@ -76,7 +76,8 @@ export const searchRecommendations = () => async (dispatch) => {
 };
 
 export const searchDetail = (resource, id) => async (dispatch) => {
-  const relatedData = resource === TYPES.CAST ? APPEND_DATA.MOVIE_CREDITS : APPEND_DATA.CREDITS;
+  const relatedData =
+    (resource === TYPES.CAST) ? APPEND_DATA.MOVIE_CREDITS : APPEND_DATA.CREDITS;
   const response = await axios({
     method: "get",
     url: `${BASE_URL}/${resource}/${id}?api_key=${API_KEY}&language=en-US&append_to_response=${relatedData}&sort_by=popularity.desc`,

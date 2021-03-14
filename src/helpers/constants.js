@@ -27,7 +27,7 @@ const constants = {
   APPEND_DATA: {
     MOVIE_CREDITS: "movie_credits",
     CREDITS: "credits",
-  }
+  },
 };
 
 export default constants;

@@ -18,7 +18,9 @@ export function Search() {
 
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchOption, setSearchOption] = useState(constants.DEFAULT_SEARCH_OPTION);
+  const [searchOption, setSearchOption] = useState(
+    constants.DEFAULT_SEARCH_OPTION
+  );
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   const handleSearch = (keyword) => {

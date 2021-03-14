@@ -41,7 +41,7 @@ export function SearchResults() {
           <Title level={5}>{title}</Title>
           <div className="results-row">
             {arr.map((result) => (
-              <Card key={arr.id} type={type} data={result} />
+              <Card key={result.id} type={type} data={result} />
             ))}
           </div>
         </>

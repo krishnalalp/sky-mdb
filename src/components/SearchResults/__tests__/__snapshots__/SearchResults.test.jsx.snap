@@ -1,0 +1,714 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults component rendered 1`] = `
+<div
+  className="search-results-wrapper"
+>
+  <h4
+    className="ant-typography"
+    style={
+      Object {
+        "WebkitLineClamp": undefined,
+      }
+    }
+  >
+    Search Results
+  </h4>
+  <h5
+    className="ant-typography"
+    style={
+      Object {
+        "WebkitLineClamp": undefined,
+      }
+    }
+  >
+    Movies
+  </h5>
+  <div
+    className="results-row"
+  >
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/299537"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Captain Marvel
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/787923"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/p71YgDQk5sFHTqF3FBygLPmZEX5.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel's Behind the Mask
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/609681"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/gWxeVJ920nprJEbXbzmuuzeaAar.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Captain Marvel 2
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/119569"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/rfxvoRoZtBLUXJqLf8z9kgJWkKt.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel One-Shot: Item 47
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/211387"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/5WOxsdb6uF9cDZ319Kdcru2C0eC.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel One-Shot: Agent Carter
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/76122"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/5plg28k4bU6KH9JrZHf46cXZnzY.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel One-Shot: The Consultant
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/259910"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/41Ke02UzYoPsiTc3YbomPGiQKMl.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel Studios: Assembling a Universe
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/368304"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/xUBZNoY7idPfqKZepnDEv7Qc8GC.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                LEGO Marvel Super Heroes: Avengers Reassembled!
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/284019"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/da2AREjdecPInHzWeZ550X1aYDU.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Phineas and Ferb: Mission Marvel
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/253980"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/tDpud3Y3gWtmSdcVhN0t4WiwsIK.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel One-Shot: All Hail the King
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/491633"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/kY1ufnbv2bTyoNcAtGF4BwapKi6.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel Rising: Secret Warriors
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/372631"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/2StM8Vavf7ukvuj9mxg1o7nKxmi.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel Super Hero Adventures: Frost Fight!
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/583209"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/z3lD286jY8iYasC5hJZ2kgZF9uY.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel Rising: Heart of Iron
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/278755"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('https://www.wildhareboca.com/wp-content/uploads/sites/310/2018/03/image-not-available.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Maggie Marvel
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/592689"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/lelNkBnjIi4N1uQBV2TnODgS9UT.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel Rising: Playing with Fire
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/622230"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/gTo2r8nNU3ZYAS6DqdeSp1VEqkq.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                LEGO Marvel Spider-Man: Vexed By Venom
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/592687"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/mFL0EzAhEj3vscyGUMk6sT7pfQg.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel Rising: Battle of the Bands
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/576743"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/pufQvXrrxng95dT4kYlQtXn98kK.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Marvel Rising: Chasing Ghosts
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/441917"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/2faGI0USP1JG9OuLdFZw1M7lwhF.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                The Marvel Universe Expands: Marvel 75th Anniversary
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="search-item"
+    >
+      <a
+        href="/movie/61020"
+        onClick={[Function]}
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-cover"
+            style={
+              Object {
+                "backgroundImage": "url('http://image.tmdb.org/t/p/w500/oOQIcNcFbZdTUSWFmY1GRz0xCT5.jpg')",
+              }
+            }
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-detail"
+            >
+              <div
+                className="card-title"
+              >
+                Adventures of Captain Marvel
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  
+</div>
+`;
