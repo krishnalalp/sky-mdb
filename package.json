@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --passWithNoTests",
+    "test": "jest",
     "lint": "eslint . --ext .js,.jsx",
     "prettier": "lint-staged"
   },
